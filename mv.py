@@ -319,7 +319,7 @@ shader4 = compileProgram(
 shaders = {1: shader2, 2: shader3, 3: shader4}
 
 vertices = []
-modelo = Obj('./model.obj')
+modelo = Obj('./charizard.obj')
 for element in modelo.vertices:
     for vertex in element:
         vertices.append(vertex)
@@ -371,9 +371,9 @@ glBufferData(
 
 def calculateMatrix(angle, movement):
     i = glm.mat4(1)
-    translate = glm.translate(i, glm.vec3(0, 0, 0))
+    translate = glm.translate(i, glm.vec3(-1, -1, 0))
     rotate = glm.rotate(i, glm.radians(angle), movement)
-    scale = glm.scale(i, glm.vec3(1, 1, 1))
+    scale = glm.scale(i, glm.vec3(0.2, 0.2, 0.2))
 
     model = translate * rotate * scale
 
